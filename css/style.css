@@ -1,2 +1,109 @@
 @charset "utf-8";
-*
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+ul, li{
+    list-style: none;
+}
+section{
+    width: 340px;
+    /* 높이는 넣다가 보면 정해지니 따로 정해주지 않는다 */
+    /* 패딩값은 피그마로 준것으로 정함 */
+    padding: 30px;
+    margin: auto;
+    border-radius: 10px;
+    /* 이 그림자를 기본으로 쓰고 사이트의 f12가서 shodow를 찾아 써도 됨 
+    x축 y축 거리*/
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    /* background-color: #f9cccc; */
+
+}
+/* nav.menu nav안에 menu 띄우면 같은 선상이라는 뜻 */
+section nav.menu{
+    /* background-color: aquamarine; */
+}
+/* float 해 놓은 것 때문에 영역이 침범한 것을 블럭 잡아주고 맞춰주기
+위해 ::after 쓰고 공식처럼 해주어야 영역이 잡혀*/
+section nav.menu::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* menu만으로는 fontawesome 안가고 그안에 a를 해줘야 적용 */
+section nav.menu a{
+    color: #aaa;
+    font-size: 20px;
+}
+section nav.menu a:first-child{
+    float: left;
+}
+section nav.menu a:last-child{
+    float: right;
+}
+/* profile 영역 */
+/* article.profile{
+    width: 100%; */
+    /* 글짜 뿐만아니라 이미지도 인라인이라 center 먹힘 */
+    /* text-align: center;
+    background-color: aqua;
+} */
+/* 호버나 다른 작동을 해주려면 감싸주어야 함 */
+/* article.profile img{
+width: 200px ;
+    border-radius: 50%;
+} */
+.prifile-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+    overflow: hidden;
+    margin: auto;
+    box-shadow: 5px 15px 30px rgba(173, 216, 230, 0.8);
+}
+.prifile-img img{
+    width: 100%;
+    transition: all .5s;
+}
+.prifile-img img:hover{
+    /*120%커짐  width: 120%하면 크기에 맞지 않게 그냥 커지므로 scale씀*/
+    transform: scale(1.2);
+   
+}
+article.profile{
+    text-align: center;
+    font-family: "arial";
+}
+article.profile h1{
+   font-weight: bold;
+   font-size: 22px;
+   
+   line-height: 1;
+   color: #555;
+   margin-bottom: 5px;
+   text-transform: uppercase;
+   margin-top: 20px; 
+}
+article.profile h2{
+    font-weight: normal;
+    font-size: 12px;
+    
+    color: #bbb;
+    margin-bottom: 30px;
+}
+.btn-view{
+    width: 180px;
+    line-height: 32px; 
+    display: block;
+    /* 글짜가 튕겨나 가면 f12보고 
+    패딩값을 줄여 본다 */
+    padding: 5px 30px; 
+    border-radius: 16px;   
+    text-decoration: none;
+    color: #fff;
+    margin: auto;
+    background-color: burlywood;
+    background: linear-gradient(45deg, #4affff, #35e0f7);
+  box-shadow: 5px 10px 20px rgba(0, 255, 255, 0.493);
+}
