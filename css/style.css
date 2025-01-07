@@ -68,9 +68,10 @@ section{
 /* nav.menu nav안에 menu 띄우면 같은 선상이라는 뜻 */
 section nav.menu{
     /* background-color: aquamarine; */
+    float: ;
 }
-/* float 해 놓은 것 때문에 영역이 침범한 것을 블럭 잡아주고 맞춰주기
-위해 ::after 쓰고 공식처럼 해주어야 영역이 잡혀*/
+/*  a에 float 해 놓은 것 때문에 영역이 침범한 것을 블럭 잡아주고 맞춰주기
+위해 ::after 쓰고 공식처럼 해주어야 영역이 잡힘*/
 section nav.menu::after{
     content: "";
     display: block;
@@ -102,13 +103,17 @@ width: 200px ;
 .prifile-img{
     width: 200px;
     height: 200px;
-    border-radius: 50%; 
+    border-radius: 50%;
+     /*이미지보다 잘라서 끄려면 넘는 부분은 가려줘야 모양이 나옴  */
     overflow: hidden;
+    /* 영역을 옮길때는 마진오토, 인라인은 text-align center함 */
     margin: auto;
     box-shadow: 5px 15px 30px rgba(173, 216, 230, 0.8);
 }
 .prifile-img img{
     width: 100%;
+    /* 잊지말자 호버시 부드럽게 해주려면 transition 꼭하고 따로 hover를 작성해
+    scale 써줘야함 */
     transition: all .5s;
 }
 .prifile-img img:hover{
